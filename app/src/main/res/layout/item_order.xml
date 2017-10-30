@@ -25,29 +25,15 @@
             app:srcCompat="@color/colorAccent" />
 
         <TextView
-            android:id="@+id/ingredients_order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/price_order"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/title_order"
-            android:layout_margin="3dp"
-            android:layout_toRightOf="@+id/photo_order"
-            android:gravity="left"
-            android:text="TextView" />
-
-        <TextView
             android:id="@+id/price_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/photo_order"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="6dp"
+            android:layout_alignLeft="@+id/title_order"
+            android:layout_alignStart="@+id/title_order"
             android:gravity="right"
             android:text="TextView"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold|italic" />
 
         <TextView
@@ -62,6 +48,38 @@
             android:gravity="center"
             android:text="TextView"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_i_count"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/price_order"
+            android:layout_alignEnd="@+id/title_order"
+            android:layout_alignRight="@+id/title_order"
+            android:layout_margin="3dp"
+            android:background="@mipmap/plus" />
+
+        <Button
+            android:id="@+id/btn_d_count"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/d_count"
+            android:layout_margin="3dp"
+            android:layout_toLeftOf="@+id/d_count"
+            android:layout_toStartOf="@+id/d_count"
+            android:background="@mipmap/min" />
+
+        <TextView
+            android:id="@+id/d_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_i_count"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/btn_i_count"
+            android:layout_toStartOf="@+id/btn_i_count"
+            android:text="1"
+            android:textSize="50sp" />
 
     </RelativeLayout>
 

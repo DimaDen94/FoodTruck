@@ -1,4 +1,4 @@
-package com.denejkodlj.foodtrack;
+package com.denejkodlj.foodtruck.Activity;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -9,7 +9,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.denejkodlj.foodtrack.adapters.MainAdapter;
+import com.denejkodlj.foodtruck.Data.Dish;
+import com.denejkodlj.foodtruck.R;
+import com.denejkodlj.foodtruck.adapters.MainAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
     private List<Dish> loadDish() {
         List<Dish> dishes = new ArrayList<>();
 
-        Dish dish1 = new Dish("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogTFHRVpv8PxEbxqebAzMtSs_x8gIiuGVzxJsS1NZJ-ppGf_A", "плов", "рис, мясо куриное, сливочное масло", 19, 10);
-        Dish dish2 = new Dish("https://i.ytimg.com/vi/CBzCYzU_78M/hqdefault.jpg", "пюре", "картошка, сливочное масло", 12, 10);
-        Dish dish3 = new Dish("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHbcrH97hld1pihpY_EDa0839WkAKoqCt-4-oLlexURfEETjXbIQ", "гречка", "гречнивая каша, сливочное масло, овощи", 15, 10);
-        Dish dish4 = new Dish("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUxTy9WNhtZGNJxAd19FNDttriXuk6FqJ2yiu8etkmNjaEyzFe", "макароны по флотски", "макароны, мясной фарш, сливочное масло", 30, 10);
+        Dish dish1 = new Dish(0,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogTFHRVpv8PxEbxqebAzMtSs_x8gIiuGVzxJsS1NZJ-ppGf_A", "плов", "рис, мясо куриное, сливочное масло", 19, 10,0);
+        Dish dish2 = new Dish(1,"https://i.ytimg.com/vi/CBzCYzU_78M/hqdefault.jpg", "пюре", "картошка, сливочное масло", 12, 10,0);
+        Dish dish3 = new Dish(2,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHbcrH97hld1pihpY_EDa0839WkAKoqCt-4-oLlexURfEETjXbIQ", "гречка", "гречнивая каша, сливочное масло, овощи", 15, 10,0);
+        Dish dish4 = new Dish(3,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUxTy9WNhtZGNJxAd19FNDttriXuk6FqJ2yiu8etkmNjaEyzFe", "макароны по флотски", "макароны, мясной фарш, сливочное масло", 30, 10,0);
 
         dishes.add(dish1);
         dishes.add(dish2);
@@ -61,5 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
         return dishes;
     }
+
 
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_light"
-    tools:context="com.denejkodlj.foodtrack.OrderActivity">
+    tools:context="com.denejkodlj.foodtruck.Activity.OrderActivity">
 
     <EditText
         android:id="@+id/editText"

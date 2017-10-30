@@ -1,4 +1,4 @@
-package com.denejkodlj.foodtrack;
+package com.denejkodlj.foodtruck;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

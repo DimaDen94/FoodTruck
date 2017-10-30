@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.denejkodlj.foodtrack">
+    package="com.denejkodlj.foodtruck">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -9,7 +9,7 @@
 
         android:name="com.orm.SugarApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/plus"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -19,22 +19,22 @@
             android:value="food_truck.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="1" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
-            android:value="com.denejkodlj.foodtrack" />
+            android:value="com.denejkodlj.foodtruck" />
 
-        <activity android:name="com.denejkodlj.foodtrack.MainActivity">
+        <activity android:name="com.denejkodlj.foodtruck.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.denejkodlj.foodtrack.OrderActivity"></activity>
+        <activity android:name="com.denejkodlj.foodtruck.Activity.OrderActivity"></activity>
     </application>
 
 </manifest>

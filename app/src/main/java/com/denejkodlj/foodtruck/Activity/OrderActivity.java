@@ -1,22 +1,21 @@
-package com.denejkodlj.foodtrack;
+package com.denejkodlj.foodtruck.Activity;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.View;
 
-import com.denejkodlj.foodtrack.adapters.MainAdapter;
-import com.denejkodlj.foodtrack.adapters.OrderAdapter;
+import com.denejkodlj.foodtruck.Data.Dish;
+import com.denejkodlj.foodtruck.R;
+import com.denejkodlj.foodtruck.RecyclerItemTouchHelper;
+import com.denejkodlj.foodtruck.adapters.OrderAdapter;
 
 import java.util.ArrayList;
 
-public class OrderActivity extends AppCompatActivity implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener{
+public class OrderActivity extends AppCompatActivity implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
     private RecyclerView recyclerView;
     private GridLayoutManager mLayoutManager;
     private OrderAdapter adapter;
@@ -27,16 +26,17 @@ public class OrderActivity extends AppCompatActivity implements RecyclerItemTouc
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         dishes = (ArrayList<Dish>) Dish.listAll(Dish.class);
-        adapter = new OrderAdapter(this,dishes);
+        if (dishes.size() > 0) {
+            adapter = new OrderAdapter(this, dishes);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewO);
+            recyclerView = (RecyclerView) findViewById(R.id.recyclerViewO);
 
-        mLayoutManager = new GridLayoutManager(this, 1);
+            mLayoutManager = new GridLayoutManager(this, 1);
 
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-
+            recyclerView.setLayoutManager(mLayoutManager);
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.setAdapter(adapter);
+        }
 
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
@@ -62,6 +62,7 @@ public class OrderActivity extends AppCompatActivity implements RecyclerItemTouc
         // attaching the touch helper to recycler view
         new ItemTouchHelper(itemTouchHelperCallback1).attachToRecyclerView(recyclerView);
     }
+
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
         if (viewHolder instanceof OrderAdapter.MyViewHolder) {
